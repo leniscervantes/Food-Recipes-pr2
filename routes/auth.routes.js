@@ -8,20 +8,21 @@ router.get("/signup", (req, res, next) => {
   });
 
   router.get("/login", (req, res, next) => {
-    res.render("auth/login");
+    res.render("auth/login")
   });
 
 //POST
 
-router.post('/signup', (req, res) => {
+router.post('/signup', (req, res, next) => {
     const { username, password, email } = req.body;
+    console.log(req.body)
     bcrypt
     .genSalt(10)
     .then((salts) => {
       return bcrypt.hash(password, salts);
     })
     .then((pass) => {
-      return userModel.create({ password: pass, username });
+      return userModel.create({ password: pass, username, email});
     })
     .then(() => {
       res.redirect('/');
