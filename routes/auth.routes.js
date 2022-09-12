@@ -7,6 +7,10 @@ router.get("/signup", (req, res, next) => {
     res.render("auth/signup");
   });
 
+  router.get("/login", (req, res, next) => {
+    res.render("auth/login");
+  });
+
 //POST
 
 router.post('/signup', (req, res) => {
@@ -24,5 +28,24 @@ router.post('/signup', (req, res) => {
     })
     .catch((err) => next(err));
 });
+
+router.post("/login", (req, res, next) => {
+    const {email, password} = req.body
+    let user
+    userModel.findOne({email})
+    .then((userDB) => {
+      user = userDB
+      return bcrypt.compare(password, user.password)
+    })
+    .then((isPassword) => {
+      if (isPassword) {
+        req.session.user = user;
+        res.redirect('/profile');
+      } else {
+        res.render('user/login', {message: 'Ususario o contraseña incorrecta!'});
+      }
+    })  
+      .catch((err) => next(err));
+  });
 
 module.exports = router;

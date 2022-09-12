@@ -29,7 +29,7 @@ const index = require("./routes/index.routes");
 app.use("/", index);
 
 const auth = require("./routes/auth.routes");
-app.use("/", auth);
+app.use("/auth", auth);
 
 
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
