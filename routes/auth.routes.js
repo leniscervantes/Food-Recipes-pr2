@@ -11,11 +11,15 @@ router.get("/signup", (req, res, next) => {
     res.render("auth/login")
   });
 
+  router.get('/logout', (req, res) => {
+    req.session.destroy();
+    res.redirect('/');
+  });
+
 //POST
 
 router.post('/signup', (req, res, next) => {
     const { username, password, email } = req.body;
-    console.log(req.body)
     bcrypt
     .genSalt(10)
     .then((salts) => {
@@ -25,40 +29,23 @@ router.post('/signup', (req, res, next) => {
       return userModel.create({ password: pass, username, email});
     })
     .then(() => {
-      res.redirect('/');
+      res.redirect('/profile');
     })
     .catch((err) => next(err));
 });
 
 router.post("/login", (req, res, next) => {
-    const {email, password} = req.body
+    const {username, password} = req.body
     let user
-    userModel.findOne({email})
+    userModel.findOne({username})
     .then((userDB) => {
+        console.log(userDB)
       user = userDB
       return bcrypt.compare(password, user.password)
     })
     .then((isPassword) => {
       if (isPassword) {
-        req.session.user = user;
-        res.redirect('/profile');
-      } else {
-        res.render('user/login', {message: 'Ususario o contraseña incorrecta!'});
-      }
-    })  
-      .catch((err) => next(err));
-  });
-
-router.post("/login", (req, res, next) => {
-    const {email, password} = req.body
-    let user
-    userModel.findOne({email})
-    .then((userDB) => {
-      user = userDB
-      return bcrypt.compare(password, user.password)
-    })
-    .then((isPassword) => {
-      if (isPassword) {
+        console.log("Esta es la sesion --->",req.session)
         req.session.user = user;
         res.redirect('/profile');
       } else {
