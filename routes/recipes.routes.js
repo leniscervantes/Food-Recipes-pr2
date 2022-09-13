@@ -4,7 +4,7 @@ const axiosRecipe = new AxiosSp();
 
 
 
-router.get('/search-recipes', (req, res, next) => {
+router.get('/search-recipes', (req, res) => {
   res.render("recipes/search-recipes")
     })
 
