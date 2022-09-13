@@ -10,9 +10,9 @@ router.get('/search-recipes', (req, res, next) => {
 
 
     router.post("/search-recipes", (req, res, next) => {
-        const {ingredient, cuisine, diet, intolerances} = req.body
+        const {ingredient, cuisine, diet, intolerances, maxReadyTime, sort} = req.body
         axiosRecipe
-        .getRecipes(ingredient,cuisine, diet, intolerances)
+        .getRecipes(ingredient,cuisine, diet, intolerances, maxReadyTime, sort)
         .then((recipes) => {
           res.render("recipes/result-recipes", recipes)
         
