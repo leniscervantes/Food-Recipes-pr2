@@ -12,7 +12,9 @@ router.get("/signup", (req, res, next) => {
   });
 
   router.get('/logout', (req, res) => {
+    console.log("La sesion se va a destruir")
     req.session.destroy();
+    console.log("la sesion se ha destruido? ---> ", req.session )
     res.redirect('/');
   });
 
@@ -29,7 +31,7 @@ router.post('/signup', (req, res, next) => {
       return userModel.create({ password: pass, username, email});
     })
     .then(() => {
-      res.redirect('/profile');
+      res.redirect('/auth/profile');
     })
     .catch((err) => next(err));
 });
@@ -39,17 +41,15 @@ router.post("/login", (req, res, next) => {
     let user
     userModel.findOne({username})
     .then((userDB) => {
-        console.log(userDB)
       user = userDB
       return bcrypt.compare(password, user.password)
     })
     .then((isPassword) => {
       if (isPassword) {
-        console.log("Esta es la sesion --->",req.session)
         req.session.user = user;
         res.redirect('/profile');
       } else {
-        res.render('user/login', {message: 'Ususario o contraseña incorrecta!'});
+        res.render('auth/login', {message: 'Ususario o contraseña incorrecta!'});
       }
     })  
       .catch((err) => next(err));
