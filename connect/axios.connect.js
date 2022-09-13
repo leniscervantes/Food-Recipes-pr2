@@ -7,8 +7,8 @@ class AxiosSp {
       baseURL: this.URL
     });
   }
-  getRecipes(ingredient, cuisine, diet, intolerances) {
-    return this.axios.get(`/recipes/complexSearch?query=${ingredient}&cuisine=${cuisine}&diet=${diet}&intolerances=${intolerances}&instructionsRequired=true&number=10&addRecipeInformation&apiKey=04cf1c837aca4c05b34b6cf3023a8cfb`)
+  getRecipes(ingredient, cuisine, diet, intolerances, maxReadyTime, sort) {
+    return this.axios.get(`/recipes/complexSearch?query=${ingredient}&cuisine=${cuisine}&diet=${diet}&intolerances=${intolerances}&instructionsRequired=true&maxReadyTime=${maxReadyTime}&sort=${sort}&number=10&apiKey=04cf1c837aca4c05b34b6cf3023a8cfb`)
     .then((res) => {
         return res.data
       })

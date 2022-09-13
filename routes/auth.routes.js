@@ -2,7 +2,6 @@ const router = require("express").Router();
 const userModel = require("../models/User.model.js")
 const bcrypt = require('bcryptjs');
 
-
 router.get("/signup", (req, res, next) => {
     res.render("auth/signup");
   });
@@ -18,6 +17,16 @@ router.get("/signup", (req, res, next) => {
     res.redirect('/');
   });
 
+  router.get("/profile/:id", (req, res, next) => {
+    const {id} = req.params
+  userModel.findById(id)
+  .then((user) => {
+    console.log(user)
+    res.render("auth/profile", user)})
+    
+  })
+  
+
 //POST
 
 router.post('/signup', (req, res, next) => {
@@ -31,7 +40,7 @@ router.post('/signup', (req, res, next) => {
       return userModel.create({ password: pass, username, email});
     })
     .then(() => {
-      res.redirect('/auth/profile');
+      res.redirect('/auth/login');
     })
     .catch((err) => next(err));
 });
@@ -47,7 +56,8 @@ router.post("/login", (req, res, next) => {
     .then((isPassword) => {
       if (isPassword) {
         req.session.user = user;
-        res.redirect('/profile');
+        // console.log(req.session.user._id)
+        res.redirect(`/auth/profile/${req.session.user._id}`);
       } else {
         res.render('auth/login', {message: 'Ususario o contraseña incorrecta!'});
       }
