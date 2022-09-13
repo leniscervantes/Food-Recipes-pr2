@@ -1,5 +1,5 @@
 body {
-  padding: 50px;
+ 
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
@@ -11,6 +11,9 @@ h1 {
   color: 15px;
 }
 
-.nav-link{
-   margin-left: 20px;
+.auth{
+   margin-right: 40px;
+}
+.letter{
+  margin-left: 40px;
 }
