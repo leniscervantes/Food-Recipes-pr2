@@ -7,9 +7,7 @@ a {
   color: #00b7ff;
 }
 
-h1 {
-  color: 15px;
-}
+
 
 .auth{
    margin-right: 40px;
@@ -19,7 +17,7 @@ h1 {
 }
 .bg{
   background-color: rgb(245, 240, 228);
-    color: rgba(245, 241, 228, 0.935);
+    
 }
 label{
   color:black; 
