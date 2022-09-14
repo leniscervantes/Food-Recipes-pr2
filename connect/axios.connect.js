@@ -13,7 +13,7 @@ class AxiosSp {
         return res.data
       })
       
-    .catch((err) => next(err));
+    .catch((err) => console.log(err));
   }
 
   getRecipeById(id) {

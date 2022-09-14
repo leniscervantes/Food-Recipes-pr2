@@ -1,20 +1,21 @@
 <h1>Your Results:</h1>
 
+ <div class="container cards card mb-2"  style="max-width: 100%;">
+  <div class="row justify-content-center recipe-cluster">
 {{#each results}}
 
-<div class="card mb-2 border-dark" style="max-width: 540px;">
-  <div class="row g-0">
-    <div class="col-md-4">
-      <img src="{{image}}" class="img-fluid rounded-start" alt="...">
-    </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <h5 class="card-title">{{title}}</h5>
-        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione dignissimos nemo id doloribus tempora nesciunt illo modi molestiae</p>
-        <a href="/recipe/{{id}}">Check this recipe!</a>  
-      </div>
-    </div>
+<div class="col-sm-12 col-md-6 col-lg-3">
+<div class="card" style="width: 100%;">
+  <img src={{image}} class="card-img-top" alt="recipe">
+  <div class="card-body">
+    <h5 class="card-title">{{title}}</h5>
+    <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cumque tempore aliquam fuga assumenda illo. Temporibus necessitatibus libero, vero velit repudiandae delectus aperiam esse? Sapiente atque sed inventore, consectetur harum dolore.</p>
+    <a href="/recipe/{{id}}" class="btn btn-primary">Go somewhere</a>
   </div>
+</div>
 </div>
 
 {{/each}}
+  </div>
+</div>
+

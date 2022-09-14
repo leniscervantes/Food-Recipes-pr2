@@ -20,7 +20,8 @@ router.get('/recipe/:id', (req, res, next) => {
 
 
 router.post("/search-recipes", (req, res, next) => {
-  const {ingredient, cuisine, diet, intolerances, maxReadyTime, sort} = req.body
+  const { ingredient, cuisine, diet, intolerances, maxReadyTime, sort } = req.body
+  console.log("AQUI ESTAN LAS INTOLERANCIAS ==>", intolerances);
     axiosRecipe
     .getRecipes(ingredient,cuisine, diet, intolerances, maxReadyTime, sort)
     .then((recipes) => {
