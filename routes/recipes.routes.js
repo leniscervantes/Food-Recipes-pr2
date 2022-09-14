@@ -25,7 +25,8 @@ router.post("/search-recipes", (req, res, next) => {
     axiosRecipe
     .getRecipes(ingredient,cuisine, diet, intolerances, maxReadyTime, sort)
     .then((recipes) => {
-      res.render("recipes/result-recipes", recipes)
+      console.log("ESTAS SON LAS RECETAS CON 3 INTOLERANCIAS ====>", recipes)
+      res.render("recipes/result-recipes", recipes) 
      
       })
     .catch((err) => next(err))

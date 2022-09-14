@@ -17,6 +17,13 @@ router.get("/signup", (req, res, next) => {
     res.redirect('/');
   });
 
+  router.get("/profile", (req, res, next) => {
+    console.log(req.session)
+  userModel.findById(req.session.user._id)
+  .then((user) => {
+    console.log(user)
+    res.render("auth/profile", user)})
+  })
   router.get("/profile/:id", (req, res, next) => {
     const {id} = req.params
   userModel.findById(id)
