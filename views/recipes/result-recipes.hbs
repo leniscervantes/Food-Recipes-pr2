@@ -1,11 +1,11 @@
-<h1>Your Results:</h1>
 
- <div class="container cards card mb-2"  style="max-width: 100%;">
+
+ <div class="container cards card mb-2 bg-transparent"  style="max-width: 100%;">
   <div class="row justify-content-center recipe-cluster">
 {{#each results}}
 
-<div class="col-sm-12 col-md-6 col-lg-3">
-<div class="card" style="width: 100%;">
+<div class="col-sm-12 col-md-6 col-lg-4">
+<div class="card mt-4" style="width: 80%;">
   <img src={{image}} class="card-img-top" alt="recipe">
   <div class="card-body">
     <h5 class="card-title">{{title}}</h5>
@@ -17,5 +17,3 @@
 {{/each}}
   </div>
 </div>
-
-
