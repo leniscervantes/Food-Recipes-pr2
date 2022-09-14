@@ -15,6 +15,16 @@ class AxiosSp {
       
     .catch((err) => next(err));
   }
+
+  getRecipeById(id) {
+    return this.axios.get(`/recipes/${id}/information?includeNutrition=true&apiKey=04cf1c837aca4c05b34b6cf3023a8cfb`)
+    .then((res) => {
+      return res.data
+    })
+    
+  .catch((err) => next(err));
+
+  }
 }
 
 module.exports = AxiosSp;
