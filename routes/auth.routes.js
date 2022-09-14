@@ -23,7 +23,14 @@ router.get("/signup", (req, res, next) => {
   .then((user) => {
     console.log(user)
     res.render("auth/profile", user)})
-    
+  })
+
+  router.get("/edit/:id", (req, res, next) => {
+    const {id} = req.params
+  userModel.findById(id)
+  .then((user) => {
+    console.log(user)
+    res.render("auth/edit-profile", user)})
   })
   
 
@@ -62,6 +69,17 @@ router.post("/login", (req, res, next) => {
         res.render('auth/login', {message: 'Ususario o contraseña incorrecta!'});
       }
     })  
+      .catch((err) => next(err));
+  })
+
+  router.post('/edit/:id', (req, res, next) => {
+    const { username, email, password} = req.body;
+    axiosCharacter
+      .editCharacter(req.params.id, { name, occupation, debt, weapon })
+      .then((character) => {
+        console.log(character);
+        res.json(character);
+      })
       .catch((err) => next(err));
   });
 

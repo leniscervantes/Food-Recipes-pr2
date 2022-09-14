@@ -1,0 +1,17 @@
+<h1>You are seeing...  {{title}}!</h1>
+
+
+
+<h5>Price per serving(must divide between 100): {{pricePerServing}}</h5>
+
+<p>{{summary}}</p>
+{{!-- Arreglar summary --}}
+
+
+
+{{#each analyzedInstructions.[0].steps}}
+<p>This are the instructions :)</p>
+<p>{{number}}</p>
+<p>{{step}}</p>
+{{/each}}
+
