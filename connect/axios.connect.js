@@ -8,7 +8,7 @@ class AxiosSp {
     });
   }
   getRecipes(ingredient, cuisine, diet, intolerances, maxReadyTime, sort) {
-    return this.axios.get(`/recipes/complexSearch?query=${ingredient}&cuisine=${cuisine}&diet=${diet}&intolerances=${intolerances}&instructionsRequired=true&maxReadyTime=${maxReadyTime}&sort=${sort}&number=10&apiKey=04cf1c837aca4c05b34b6cf3023a8cfb`)
+    return this.axios.get(`/recipes/complexSearch?query=${ingredient}&cuisine=${cuisine}&diet=${diet}&intolerances=${intolerances}&instructionsRequired=true&maxReadyTime=${maxReadyTime}&sort=${sort}&number=10&apiKey=64d925c99ad943ac85d54b13b0fa9281`)
     .then((res) => {
         return res.data
       })
@@ -17,13 +17,11 @@ class AxiosSp {
   }
 
   getRecipeById(id) {
-    return this.axios.get(`/recipes/${id}/information?includeNutrition=true&apiKey=04cf1c837aca4c05b34b6cf3023a8cfb`)
+    return this.axios.get(`/recipes/${id}/information?includeNutrition=true&apiKey=64d925c99ad943ac85d54b13b0fa9281`)
     .then((res) => {
       return res.data
     })
-    
-  .catch((err) => next(err));
-
+    .catch((err) => console.log(err));
   }
 }
 

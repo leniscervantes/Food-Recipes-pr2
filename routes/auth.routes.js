@@ -74,11 +74,10 @@ router.post("/login", (req, res, next) => {
 
   router.post('/edit/:id', (req, res, next) => {
     const { username, email, password} = req.body;
-    axiosCharacter
-      .editCharacter(req.params.id, { name, occupation, debt, weapon })
-      .then((character) => {
-        console.log(character);
-        res.json(character);
+    userModel.findByIdAndUpdate(req.params.id, { username, email, password },{new: true})
+      .then((user) => {
+        console.log(user);
+        res.render("auth/profile",user)
       })
       .catch((err) => next(err));
   });
