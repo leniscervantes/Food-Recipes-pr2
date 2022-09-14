@@ -1,146 +1,164 @@
-
 <h1 class="finder">Recipe Finder</h1>
-<div class = "search">
-<form action="/search-recipes" method="POST">
+<div class="search">
+  <form action="/search-recipes" method="POST">
 
-<div class="ingredient">
+    <div class="ingredient">
 
-    <h3>Ingredient</h3>
-    <input type="text" name="ingredient">
+      <h3>Ingredient</h3>
+      <input type="text" name="ingredient">
 
-   <h3>Max Ready Time</h3>
-   <input type="number" value= "180"name="maxReadyTime">
+      <h3>Max Ready Time</h3>
+      <input type="number" value="180" name="maxReadyTime">
     </div>
 
 
-    <div class = "container">
+    <div class="container">
       <div class="row">
-      <div class = "col-md-3">
+        <div class="col-md-3">
 
-    <h3>Cuisin</h3>
+          <h3>Cuisine</h3>
 
-    <label class="container ">None
-  <input type="checkbox" checked="checked">
-  <span class="checkmark"></span>
-</label>
 
-<label class="container">Spanish
-  <input type="checkbox">
-  <span class="checkmark"></span>
-</label>
+          <label class="container ">None
+            <input type="checkbox" checked="checked" name="cuisine" value="">
+            <span class="checkmark"></span>
+          </label>
 
-<label class="container">American
-  <input type="checkbox">
-  <span class="checkmark"></span>
-</label>
+          <label class="container">Spanish
+            <input type="checkbox" name="cuisine" value="Spanish">
+            <span class="checkmark"></span>
+          </label>
 
-<label class="container">Mexican
-  <input type="checkbox">
-  <span class="checkmark"></span>
-</label>
+          <label class="container">American
+            <input type="checkbox" name="cuisine" value="American">
+            <span class="checkmark"></span>
+          </label>
 
-<label class="container">Latin American
-  <input type="checkbox">
-  <span class="checkmark"></span>
-</label>
+          <label class="container">Mexican
+            <input type="checkbox" name="cuisine" value="Mexican">
 
-<label class="container">Thai
-  <input type="checkbox">
-  <span class="checkmark"></span>
-</label>
+            <span class="checkmark"></span>
+          </label>
 
-<label class="container">Italian
-  <input type="checkbox">
-  <span class="checkmark"></span>
-</label>
-</div>
-<div class ="col-md-3">
-<h3>Diet</h3>
+          <label class="container">Latin American
+            <input type="checkbox" name="cuisine" value="Latin-american">
+            <span class="checkmark"></span>
+          </label>
 
-<label class="container">None
-  <input type="checkbox">
-  <span class="checkmark"></span>
-</label>
+          <label class="container">Thai
+            <input type="checkbox" name="cuisine" value="Thai">
 
-<label class="container">Gluten Free
-  <input type="checkbox">
-  <span class="checkmark"></span>
-</label>
+            <span class="checkmark"></span>
+          </label>
 
-<label class="container">Vegetarian
-  <input type="checkbox">
-  <span class="checkmark"></span>
-</label>
+          <label class="container">Italian
+            <input type="checkbox" name="cuisine" value="Italian">
+            <span class="checkmark"></span>
+          </label>
+        </div>
 
-<label class="container">Vegan
-  <input type="checkbox">
-  <span class="checkmark"></span>
-</label>
 
-</div>
-<div class="col-md-3">
-   <h3>Intolerance</h3>
+        <div class="col-md-3">
+          <h3>Diet</h3>
 
-   <label class="container">None
-  <input type="checkbox" checked="checked">
-  <span class="checkmark"></span>
-</label>
+          <label class="container">None
+            <input type="checkbox" name="diet"value="">
 
-<label class="container">Egg
-  <input type="checkbox">
-  <span class="checkmark"></span>
-</label>
+            <span class="checkmark"></span>
+          </label>
 
-<label class="container">Gluten
-  <input type="checkbox">
-  <span class="checkmark"></span>
-</label>
+          <label class="container">Gluten Free
+            <input type="checkbox" name="diet"value="GlutenFree">
 
-<label class="container">Peanut
-  <input type="checkbox">
-  <span class="checkmark"></span>
-</label>
+            <span class="checkmark"></span>
+          </label>
 
-<label class="container">Seafood
-  <input type="checkbox">
-  <span class="checkmark"></span>
-</label>
+          <label class="container">Vegetarian
+            <input type="checkbox" name="diet" value="Vegetarian">
 
-<label class="container">Shellfish
-  <input type="checkbox" name="Shellfish">
-  <span class="checkmark"></span>
-</label>
+            <span class="checkmark"></span>
+          </label>
 
-<label class="container">Wheat
-  <input type="checkbox">
-  <span class="checkmark"></span>
-</label>
-</div>
-<div class="col-md-3">
- <h3>Sort</h3>
+          <label class="container">Vegan
+            <input type="checkbox" name="diet" value="Vegan">
 
-  <label class="container">None
-  <input type="checkbox">
-  <span class="checkmark"></span>
-</label>
+            <span class="checkmark"></span>
+          </label>
 
-<label class="container">Price
-  <input type="checkbox">
-  <span class="checkmark"></span>
-</label>
+        </div>
+        <div class="col-md-3">
+          <h3>Intolerances</h3>
 
-<label class="container">Popularity
-  <input type="checkbox">
-  <span class="checkmark"></span>
-</label>
+          <label class="container">None
+            <input type="checkbox" name="intolerances" value=""checked="checked">
+            <span class="checkmark"></span>
+          </label>
 
-<label class="container">Time
-  <input type="checkbox">
-  <span class="checkmark"></span>
-</label>
-</div>
-</div>
-</div>
+          <label class="container">Egg
+            <input type="checkbox" name="intolerances" value="Egg">
 
-   <button  class="wrapper loader-button btn-active "type="submit">Search</button>
-</form>
+            <span class="checkmark"></span>
+          </label>
+
+          <label class="container">Gluten
+            <input type="checkbox" name="intolerances" value="Gluten">
+
+            <span class="checkmark"></span>
+          </label>
+
+          <label class="container">Peanut
+            <input type="checkbox" name="intolerances" value="Peanut">
+
+            <span class="checkmark"></span>
+          </label>
+
+          <label class="container">Seafood
+            <input type="checkbox" name="intolerances" value="Seafood">
+
+            <span class="checkmark"></span>
+          </label>
+
+          <label class="container">Shellfish
+            <input type="checkbox" name="intolerances" value="Shellfish">
+            <span class="checkmark"></span>
+          </label>
+
+          <label class="container">Wheat
+            <input type="checkbox" name="intolerances" value="Wheat">
+
+            <span class="checkmark"></span>
+          </label>
+        </div>
+        <div class="col-md-3">
+
+          <h3>Sort</h3>
+
+          <label class="container">None
+            <input type="checkbox" name="sort" value="">
+
+            <span class="checkmark"></span>
+          </label>
+
+          <label class="container">Price
+            <input type="checkbox" name="sort" value="Price">
+
+            <span class="checkmark"></span>
+          </label>
+
+          <label class="container">Popularity
+            <input type="checkbox" name="sort" value="Popularity">
+
+            <span class="checkmark"></span>
+          </label>
+
+          <label class="container">Time
+            <input type="checkbox" name="sort" value="Time">
+
+            <span class="checkmark"></span>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <button class="wrapper loader-button btn-active " type="submit">Search</button>
+  </form>
