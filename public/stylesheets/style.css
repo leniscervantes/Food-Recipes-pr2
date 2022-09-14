@@ -9,8 +9,27 @@ a {
 .title{
   display: flex;
   justify-content: center;
-  margin-top: 100px;
+  margin:30px;
 }
+.text{
+  margin: 60px;
+  color: darkred;
+}
+.summary-panel{
+  margin: 60px;
+  font-size: medium;
+}
+.text-step{
+  margin: 60px;
+  font-size: medium;
+}
+
+
+.num{
+  font-size: 20px;
+  color:crimson;
+}
+
 
 .search{
   display: flex;
@@ -29,6 +48,14 @@ a {
 
 img{
   width: 800px;
+}
+
+.image{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 80px;
 }
 
 .auth{
