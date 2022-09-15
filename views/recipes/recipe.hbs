@@ -11,9 +11,11 @@
 
 <h3 class="recipes-title">Ingredients:</h3>
 <div class="text-ingredient">
+  <div class="container">
+  <div class="row">
   {{#each recipe.extendedIngredients}}
-
-  <div class="card mb-3 " style="width: 200px;">
+  <div class="col-sm-12 col-md-6 col-lg-2">
+    <div class="card mb-3" style="width: 215px; ">
     <div class="row g-0">
       <div class="col-md-8">
         <div class="card-body">
@@ -24,7 +26,11 @@
       </div>
     </div>
   </div>
+</div>
+
   {{/each}}
+</div>
+</div>
 </div>
 
 <h3 class="recipes-title">This are the instructions :)</h3>
@@ -53,5 +59,3 @@
 <p>{{body}}</p>
 
 {{/each}}
-{{!-- Crear formular para crear el comment --}}
-{{!-- Visualizar una lista de comments --}}
