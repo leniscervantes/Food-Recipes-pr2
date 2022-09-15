@@ -2,7 +2,7 @@ const { Schema, model } = require("mongoose");
 
 
 const recipeShema = new Schema(
-    {   // COMPLETAR CAMPOS
+    {
         extendedIngredients: [
             {
                 name: { type: String },
@@ -15,6 +15,9 @@ const recipeShema = new Schema(
 
         instructions: { type: String },
         comments: [{ type: Schema.Types.ObjectId, ref: 'comments' }]
+    },
+    {
+        timestamps: true,
     }
 );
 
