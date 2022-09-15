@@ -12,7 +12,7 @@ require("./config")(app);
 require('./config/session.config')(app);
 
 const capitalized = require("./utils/capitalized");
-const projectName = "Food-Recipes";
+const projectName = "Spoonable!";
 
 app.locals.appTitle = `${capitalized(projectName)}`;
 

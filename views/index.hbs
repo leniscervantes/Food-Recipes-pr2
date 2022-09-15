@@ -1,1 +1,27 @@
 <h1 class="title">{{appTitle}}</h1>
+
+<div>
+    <h3>This is {{appTitle}}!</h3>
+    <h5>{{appTitle}} is a web for ... Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi mollitia
+        dignissimos perferendis cum commodi alias sapiente possimus officia. Ex quibusdam quae rerum sapiente labore.
+        Ratione adipisci laboriosam similique iure a.</h5>
+</div>
+
+<div class="container cards card mb-2 bg-transparent" style="max-width: 100%;">
+    <div class="row justify-content-center recipe-cluster">
+
+        {{#each data.recipes}}
+
+        <div class="col-sm-12 col-md-6 col-lg-4">
+            <div class="card mt-4" style="width: 80%;">
+                <img src={{image}} class="card-img-top" alt="recipe">
+                <div class="card-body">
+                    <h5 class="card-title">{{title}}</h5>
+                    <a href="/recipe/{{id}}" class="btn btn-primary">Check this recipe!</a>
+                </div>
+            </div>
+        </div>
+
+        {{/each}}
+    </div>
+</div>
