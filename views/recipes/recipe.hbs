@@ -1,4 +1,4 @@
-<h1 class="title">You are seeing... {{title}}!</h1>
+<h1 class="title">You are seeing... {{recipe.title}}!</h1>
 
 <div class="image">
   <img src={{recipe.image}} alt="recipe-img">
@@ -12,25 +12,25 @@
 <h3 class="recipes-title">Ingredients:</h3>
 <div class="text-ingredient">
   <div class="container">
-  <div class="row">
-  {{#each recipe.extendedIngredients}}
-  <div class="col-sm-12 col-md-6 col-lg-2">
-    <div class="card mb-3" style="width: 215px; ">
-    <div class="row g-0">
-      <div class="col-md-8">
-        <div class="card-body">
-          <h5 class="card-title">{{name}}</h5>
-          <p class="card-text">{{amount}} {{unit}}</p>
+    <div class="row">
+      {{#each recipe.extendedIngredients}}
+      <div class="col-sm-12 col-md-6 col-lg-2">
+        <div class="card mb-3" style="width: 215px; ">
+          <div class="row g-0">
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">{{name}}</h5>
+                <p class="card-text">{{amount}} {{unit}}</p>
 
+              </div>
+            </div>
+          </div>
         </div>
       </div>
+
+      {{/each}}
     </div>
   </div>
-</div>
-
-  {{/each}}
-</div>
-</div>
 </div>
 
 <h3 class="recipes-title">This are the instructions :)</h3>

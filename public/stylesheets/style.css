@@ -1,6 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,400;1,300&display=swap');
+/* font-family: 'Ubuntu',
+sans-serif */
+
 body {
 
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 14px "Ubuntu", Helvetica, Arial, sans-serif;
 }
 
 a {
@@ -19,12 +23,12 @@ a {
   color: darkred;
 }
 
- .text-ingredient {
+.text-ingredient {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
- 
-} 
+
+}
 
 .recipes-title {
   margin: 60px;
@@ -88,8 +92,9 @@ img {
   background-color: rgb(245, 240, 228);
 
 }
-.card-text{
-  font-size:17px ;
+
+.card-text {
+  font-size: 17px;
 }
 
 label {
@@ -247,10 +252,16 @@ label {
   display: flex;
   justify-content: center;
   margin-top: 100px;
-  text-align: center; 
+  text-align: center;
 }
-.pro label{
+
+.pro label {
   font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.message {
+  margin-bottom: 10px;
 }
 
 .profile {

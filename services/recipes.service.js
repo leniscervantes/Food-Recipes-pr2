@@ -22,6 +22,14 @@ class RecipeService {
       })
       .catch((err) => console.log(err));
   }
+
+  getRandomRecipe() {
+    return this.axios.get(`/recipes/random&apiKey=${process.env.APIKEY}`)
+      .then(({ data }) => {
+        return data
+      })
+      .catch((err) => console.log(err));
+  }
 }
 
 module.exports = RecipeService;
