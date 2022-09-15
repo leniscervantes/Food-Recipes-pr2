@@ -1,4 +1,4 @@
-<h1 class="title">You are seeing... {{title}}!</h1>
+<h2 class="title">You are seeing... {{title}}!</h2>
 
 <div class="image">
   <img src={{recipe.image}} alt="recipe-img">
@@ -39,9 +39,21 @@
   <p class="num">{{number}} <span class="span-instructions">{{step}}</span></p>
 
   {{/each}}
+  <form action="/recipe/{{id}}" method="post">
+  <div class="mb-3">
+    <label for="">Title</label>
+    <input type="text" name="title">
+  </div>
+  <div class="input-group">
+    <span class="input-group-text">Comment</span>
+    <textarea class="form-control" name="body" aria-label="With textarea"></textarea>
+  </div>
+  
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
 </div>
 
-<form action="/recipe/{{id}}" method="post">
+{{!-- <form action="/recipe/{{id}}" method="post">
   <div>
     <label for="">Title</label>
     <input type="text" name="title">
@@ -51,9 +63,10 @@
     <textarea class="form-control" name="body" aria-label="With textarea"></textarea>
   </div>
   <button type="submit">PEPE</button>
-</form>
+</form> --}}
 
 {{#each comments}}
+
 <h4>{{title}}</h4>
 <p>{{author.username}}</p>
 <p>{{body}}</p>
