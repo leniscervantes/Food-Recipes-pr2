@@ -69,7 +69,7 @@ router.post("/login", (req, res, next) => {
         req.session.user = user;
         res.redirect(`/auth/profile/${req.session.user._id}`);
       } else {
-        res.render('auth/login', { message: 'Ususario o contraseña incorrecta!' });
+        res.render('auth/login', { message: 'Usuario o contraseña incorrecta!' });
       }
     })
     .catch((err) => next(err));

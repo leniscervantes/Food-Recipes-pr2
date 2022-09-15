@@ -253,7 +253,7 @@ label {
   font-size: 20px;
 }
 
-.profile{
+.profile {
   display: flex;
   flex-direction: row;
 }
