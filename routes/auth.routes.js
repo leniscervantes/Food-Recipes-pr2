@@ -16,18 +16,23 @@ router.get('/logout', (req, res) => {
 });
 
 router.get("/profile", (req, res, next) => {
-  userModel.findById(req.session.user._id)
-    .then((user) => {
-      res.render("auth/profile", user)
-    })
+  if (!req.session.user === undefined) {
+    userModel.findById(req.session.user._id)
+      .then((user) => {
+        res.render("auth/profile", user)
+      })
+  }
+  else res.render("auth/signup")
+
 })
-router.get("/profile/:id", (req, res, next) => {
-  const { id } = req.params
-  userModel.findById(id)
-    .then((user) => {
-      res.render("auth/profile", user)
-    })
-})
+
+// router.get("/profile/:id", (req, res, next) => {
+//   const { id } = req.params
+//   userModel.findById(id)
+//     .then((user) => {
+//       res.render("auth/profile", user)
+//     })
+// })
 
 router.get("/edit/:id", (req, res, next) => {
   const { id } = req.params
@@ -35,6 +40,13 @@ router.get("/edit/:id", (req, res, next) => {
     .then((user) => {
       res.render("auth/edit-profile", user)
     })
+})
+
+router.get('/delete/:id', (req, res, next) => {
+  console.log(req.params.id)
+  userModel.findByIdAndDelete(req.params.id)
+    .then(() => res.redirect("/"))
+    .catch((err) => next(err));
 })
 
 
@@ -75,13 +87,18 @@ router.post("/login", (req, res, next) => {
     .catch((err) => next(err));
 })
 
+
 router.post('/edit/:id', (req, res, next) => {
   const { username, email, password } = req.body;
+  console.log(req.body)
   userModel.findByIdAndUpdate(req.params.id, { username, email, password }, { new: true })
     .then((user) => {
       res.render("auth/profile", user)
     })
     .catch((err) => next(err));
 });
+
+
+
 
 module.exports = router;

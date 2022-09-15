@@ -5,7 +5,8 @@
 | GET           | /             | Home          |
 | GET           | /signup       |Register page  |
 | GET           | /login        |Log in page    |
-| GET           | /recipes      |List of recipes|
-| GET           | /recipes/:id  |Recipe info    |
+| GET           | //search-recipes|List of recipes|
+| GET           | /recipe/:id  |Recipe info    |
 | GET           | /logout       |Log out        |
+| GET           | /profile       |Your profile once you logged in|
 

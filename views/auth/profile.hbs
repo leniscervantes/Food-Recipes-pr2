@@ -1,11 +1,27 @@
 <h2 class="title">Profile</h2>
 
-<div class="profile">
+
+<div class="card profile" style="height: 8rem; width: 25rem">
+    <div class="card-body">
+        <h5 class="card-title">{{username}}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">{{email}}</h6>
+
+        <a href="/auth/edit/{{id}}" class="card-link">Edit Profile</a>
+        <a href="/auth/delete/{{id}}" class="card-link">Delete your Profile</a>
+    </div>
+</div>
+
+
+
+
+
+{{!-- <div class="profile">
     <h3>{{username}}</h3>
 
-    <h3>{{email}}</h3>
+    <h3>{{email}}</h3> --}}
 
-    <a href="/auth/edit/{{id}}">Edit Profile</a>
+    {{!-- <a href="/auth/edit/{{id}}">Edit Profile</a> --}}
 
-    <a href="/delete/{{id}}">Delete your Profile</a>
-</div>
+    {{!-- <a href="/delete/{{id}}">Delete your Profile</a> --}}
+    {{!--
+</div> --}}
