@@ -4,14 +4,16 @@
 <img src={{image}} alt="recipe-img">
 </div>
 <h5 class="text">Price per serving(must divide between 100): {{pricePerServing}}$</h5>
+<h3 class="recipes-title">Summary:</h3>
 <div class="summary-panel">
 <p>{{{summary}}}</p>
 </div>
 
-<div>
+  <h3 class="recipes-title">Ingredients:</h3>
+<div class="text-ingredient">
     {{#each extendedIngredients}}
     
-    <div class="card mb-3 " style="max-width: 300px;">
+    <div class="card mb-3 " style="width: 200px;">
   <div class="row g-0">
     <div class="col-md-8">
       <div class="card-body">
@@ -25,10 +27,10 @@
     {{/each}}
 </div>
 
+<h3 class="recipes-title">This are the instructions :)</h3>
 <div class="text-step">
 {{#each analyzedInstructions.[0].steps}}
-<p>This are the instructions :)</p>
-<p class="num">{{number}}</p>
-<p>{{step}}</p>
+<p class="num">{{number}}      <span class="span-instructions">{{step}}</span></p>
+
 {{/each}}
 </div>
