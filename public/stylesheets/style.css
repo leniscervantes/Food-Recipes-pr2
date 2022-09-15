@@ -19,8 +19,20 @@ a {
 }
 
 .text {
-  margin: 60px;
-  color: darkred;
+  margin-top:  60px;
+}
+
+.comment{
+  margin-top: 70px;
+  display: flex;
+  flex-direction:column;
+  justify-content: center;
+}
+.comment-text{
+  margin-top: 70px;
+ text-align: center;
+  display: flex;
+  justify-content: center;
 }
 
 .text-ingredient {

@@ -15,6 +15,7 @@ router.get('/recipe/:id', (req, res, next) => {
   axiosRecipe
     .getRecipeById(id)
     .then((recipe) => {
+      console.log(recipe)
       commentModel.find({ idRecipe: id })
         .populate("author")
         .then((comments) => {
