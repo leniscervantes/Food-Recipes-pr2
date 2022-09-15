@@ -25,6 +25,9 @@ app.use("/auth", auth);
 const recipes = require("./routes/recipes.routes");
 app.use("/", recipes);
 
+const comments = require("./routes/comments.routes");
+app.use("/", comments)
+
 
 require("./error-handling")(app);
 
