@@ -1,94 +1,99 @@
 body {
- 
+
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
   color: #00b7ff;
 }
-.title{
+
+.title {
   display: flex;
   justify-content: center;
-  margin:30px;
+  margin: 30px;
 }
-.text{
+
+.text {
   margin: 60px;
   color: darkred;
 }
-.text-ingredient{
+
+.text-ingredient {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  margin:60px;
+  margin: 60px;
 }
 
-.recipes-title{
-  margin:60px;
+.recipes-title {
+  margin: 60px;
 }
 
-.span-instructions{
-  color:black;
+.span-instructions {
+  color: black;
 }
-.summary-panel{
+
+.summary-panel {
   margin: 60px;
   font-size: medium;
 }
-.text-step{
+
+.text-step {
   margin: 60px;
   font-size: medium;
 }
 
-
-.num{
+.num {
   font-size: 20px;
-  color:crimson;
+  color: crimson;
 }
 
-
-.search{
+.search {
   display: flex;
-  justify-content:space-evenly;
+  justify-content: space-evenly;
   margin-top: 50px;
 }
 
-.ingredient{
+.ingredient {
   display: flex;
   justify-content: space-between;
 }
 
-.container{
+.container {
   margin-top: 20px;
 }
 
-img{
+img {
   width: 800px;
 }
 
-.image{
-  display:flex;
+.image {
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-bottom: 80px;
 }
 
-.auth{
-   margin-right: 40px;
+.auth {
+  margin-right: 40px;
 }
-.letter{
+
+.letter {
   margin-left: 40px;
 }
 
-
-.bg{
+.bg {
   background-color: rgb(245, 240, 228);
-    
+
 }
-label{
-  color:black; 
+
+label {
+  color: black;
 }
-.finder{
-  color:black;
+
+.finder {
+  color: black;
   display: flex;
   justify-content: center;
   margin-top: 15px;
@@ -103,14 +108,13 @@ label{
   height: 50px;
 }
 
-
 .loader-button {
   display: flex;
   padding: 0 60px;
   outline: none;
   border: none;
   background: rgb(70, 158, 41);
-  color:white;
+  color: white;
   text-transform: uppercase;
   letter-spacing: 2px;
   font-size: 24px;
@@ -232,11 +236,11 @@ label{
   border-radius: 50%;
   background: white;
 }
- 
+
 /*profile*/
 
-.pro{
+.pro {
   display: flex;
   justify-content: center;
   margin-top: 200px;
-} 
+}

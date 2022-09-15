@@ -1,18 +1,19 @@
 const router = require('express').Router();
-const AxiosSp = require('../connect/axios.connect');
-const axiosRecipe = new AxiosSp();
-
-
+const RecipeService = require('../services/recipes.service');
+const axiosRecipe = new RecipeService();
 
 router.get('/search-recipes', (req, res) => {
   res.render("recipes/search-recipes")
 })
 
 router.get('/recipe/:id', (req, res, next) => {
+
+  const { id } = req.params
+
   axiosRecipe
-    .getRecipeById(req.params.id)
+    .getRecipeById(id)
     .then((recipe) => {
-      res.render("recipes/recipe",recipe)
+      res.render("recipes/recipe", recipe)
     })
     .catch((err) => next(err));
 });
@@ -20,15 +21,14 @@ router.get('/recipe/:id', (req, res, next) => {
 
 
 router.post("/search-recipes", (req, res, next) => {
-  const {ingredient, maxReadyTime, cuisine, diet, intolerances, sort} = req.body
-  console.log(req.body)
-    axiosRecipe
-    .getRecipes(ingredient,cuisine, diet, intolerances, maxReadyTime, sort)
+
+  const { ingredient, maxReadyTime, cuisine, diet, intolerances, sort, sortDir } = req.body
+
+  axiosRecipe
+    .getRecipes(ingredient, cuisine, diet, intolerances, maxReadyTime, sort, sortDir)
     .then((recipes) => {
-      console.log("ESTAS SON LAS RECETAS CON 3 INTOLERANCIAS ====>", recipes)
-      res.render("recipes/result-recipes", recipes) 
-     
-      })
+      res.render("recipes/result-recipes", recipes)
+    })
     .catch((err) => next(err))
 })
 

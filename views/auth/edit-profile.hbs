@@ -1,22 +1,22 @@
 <div class="pro">
 
-<h2>Edit Your Profile!</h2>
+  <h2>Edit Your Profile!</h2>
 
-<form action="/auth/edit/{{_id}}" method="POST">
-  <div class="mb-3 w-25">
-    <label class="form-label">Email address</label>
-    <input type="email" value="{{email}}" name="email" class="form-control"  aria-describedby="emailHelp">
-    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-  </div>
-  <div class="mb-3 w-25">
-    <label class="form-label">Username</label>
-    <input type="text" value="{{username}}" name="username" class="form-control"  >
-    <div class="form-text">Your username will be the name everyone will see, so be creative!</div>
-  </div>
-  <div class="mb-3 w-25">
-    <label class="form-label">Password</label>
-    <input type="password" class="form-control" name="password">
-  </div>
-  <button type="submit" class="btn btn-success">Submit</button>
-</form>
+  <form action="/auth/edit/{{_id}}" method="POST">
+    <div class="mb-3 w-25">
+      <label class="form-label">Email address</label>
+      <input type="email" value="{{email}}" name="email" class="form-control" aria-describedby="emailHelp">
+      <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+    </div>
+    <div class="mb-3 w-25">
+      <label class="form-label">Username</label>
+      <input type="text" value="{{username}}" name="username" class="form-control">
+      <div class="form-text">Your username will be the name everyone will see, so be creative!</div>
+    </div>
+    <div class="mb-3 w-25">
+      <label class="form-label">Password</label>
+      <input type="password" class="form-control" name="password">
+    </div>
+    <button type="submit" class="btn btn-success">Submit</button>
+  </form>
 </div>
