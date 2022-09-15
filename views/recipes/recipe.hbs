@@ -1,17 +1,17 @@
 <h1 class="title">You are seeing... {{title}}!</h1>
 
 <div class="image">
-  <img src={{image}} alt="recipe-img">
+  <img src={{recipe.image}} alt="recipe-img">
 </div>
-<h5 class="text">Price per serving(must divide between 100): {{pricePerServing}}$</h5>
+<h5 class="text">Price per serving(must divide between 100): {{recipe.pricePerServing}}$</h5>
 <h3 class="recipes-title">Summary:</h3>
 <div class="summary-panel">
-  <p>{{{summary}}}</p>
+  <p>{{{recipe.summary}}}</p>
 </div>
 
 <h3 class="recipes-title">Ingredients:</h3>
 <div class="text-ingredient">
-  {{#each extendedIngredients}}
+  {{#each recipe.extendedIngredients}}
 
   <div class="card mb-3 " style="width: 200px;">
     <div class="row g-0">
@@ -29,8 +29,29 @@
 
 <h3 class="recipes-title">This are the instructions :)</h3>
 <div class="text-step">
-  {{#each analyzedInstructions.[0].steps}}
+  {{#each recipe.analyzedInstructions.[0].steps}}
   <p class="num">{{number}} <span class="span-instructions">{{step}}</span></p>
 
   {{/each}}
 </div>
+
+<form action="/recipe/{{id}}" method="post">
+  <div>
+    <label for="">Title</label>
+    <input type="text" name="title">
+  </div>
+  <div class="input-group">
+    <span class="input-group-text">Comment</span>
+    <textarea class="form-control" name="body" aria-label="With textarea"></textarea>
+  </div>
+  <button type="submit">PEPE</button>
+</form>
+
+{{#each comments}}
+<h4>{{title}}</h4>
+<p>{{author.username}}</p>
+<p>{{body}}</p>
+
+{{/each}}
+{{!-- Crear formular para crear el comment --}}
+{{!-- Visualizar una lista de comments --}}
