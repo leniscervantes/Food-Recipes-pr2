@@ -1,25 +1,44 @@
-
-  <h2 class="title">Log In</h2>
+{{!--
+<h2 class="title">Log In</h2>
 
 <div class="pro">
 
   <form action="/auth/login" method="post">
-  
-  <div class="mb-3">
-    <label class="form-label">Username</label>
-    <input type="text" value="" name="username" class="form-control"  >
-    <div class="form-text">Your username will be the name everyone will see, so be creative!</div>
-  </div>
-  <div class="mb-3">
-    <label class="form-label">Password</label>
-    <input type="password" class="form-control" name="password">
-  </div>
-  <button type="submit" class="btn btn-success">Submit</button>
-  
-</form>
+
+    <div class="mb-3">
+      <label class="form-label">Username</label>
+      <input type="text" value="" name="username" class="form-control">
+      <div class="form-text">Your username will be the name everyone will see, so be creative!</div>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Password</label>
+      <input type="password" class="form-control" name="password">
+    </div>
+    <button type="submit" class="btn btn-success">Submit</button>
+
+  </form>
 
 </div>
 
-<div class ="message">
-{{message}} 
+<div class="message">
+  {{message}}
+</div> --}}
+
+<div class="pro">
+
+  <h2 class="title">Log In</h2>
+
+  <form action="/auth/login" method="post">
+
+    <div class="mb-3">
+      <label class="form-label">Username</label>
+      <input type="text" name="username" class="form-control">
+      <div class="form-text">Your username will be the name everyone will see, so be creative!</div>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Password</label>
+      <input type="password" class="form-control" name="password">
+    </div>
+    <button type="submit" class="btn btn-success">Submit</button>
+  </form>
 </div>
