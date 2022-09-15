@@ -1,4 +1,5 @@
 <h1 class="finder">Recipe Finder</h1>
+
 <div class="search">
   <form action="/search-recipes" method="POST">
 
@@ -19,39 +20,39 @@
 
 
           <label class="container">None
-            <input type="checkbox" checked="checked" name="cuisine" value="">
+            <input type="radio" checked="checked" name="cuisine" value="">
             <span class="checkmark"></span>
           </label>
 
           <label class="container">Spanish
-            <input type="checkbox" name="cuisine" value="Spanish">
+            <input type="radio" name="cuisine" value="Spanish">
             <span class="checkmark"></span>
           </label>
 
           <label class="container">American
-            <input type="checkbox" name="cuisine" value="American">
+            <input type="radio" name="cuisine" value="American">
             <span class="checkmark"></span>
           </label>
 
           <label class="container">Mexican
-            <input type="checkbox" name="cuisine" value="Mexican">
+            <input type="radio" name="cuisine" value="Mexican">
 
             <span class="checkmark"></span>
           </label>
 
           <label class="container">Latin American
-            <input type="checkbox" name="cuisine" value="Latin-american">
+            <input type="radio" name="cuisine" value="Latin-american">
             <span class="checkmark"></span>
           </label>
 
           <label class="container">Thai
-            <input type="checkbox" name="cuisine" value="Thai">
+            <input type="radio" name="cuisine" value="Thai">
 
             <span class="checkmark"></span>
           </label>
 
           <label class="container">Italian
-            <input type="checkbox" name="cuisine" value="Italian">
+            <input type="radio" name="cuisine" value="Italian">
             <span class="checkmark"></span>
           </label>
         </div>
@@ -61,36 +62,33 @@
           <h3>Diet</h3>
 
           <label class="container ">None
-            <input type="checkbox" checked="checked" name="diet"value="">
-
+            <input type="radio" checked="checked" name="diet" value="">
             <span class="checkmark"></span>
           </label>
 
           <label class="container">Gluten Free
-            <input type="checkbox" name="diet"value="GlutenFree">
-
+            <input type="radio" name="diet" value="GlutenFree">
             <span class="checkmark"></span>
           </label>
 
           <label class="container">Vegetarian
-            <input type="checkbox" name="diet" value="Vegetarian">
-
+            <input type="radio" name="diet" value="Vegetarian">
             <span class="checkmark"></span>
           </label>
 
           <label class="container">Vegan
-            <input type="checkbox" name="diet" value="Vegan">
+            <input type="radio" name="diet" value="Vegan">
 
             <span class="checkmark"></span>
           </label>
-            
+
 
         </div>
         <div class="col-md-3">
           <h3>Intolerances</h3>
 
           <label class="container">None
-            <input type="checkbox" name="intolerances" value=""checked="checked">
+            <input type="radio" name="intolerances" value="" checked="checked">
             <span class="checkmark"></span>
           </label>
 
@@ -134,28 +132,39 @@
           <h3>Sort</h3>
 
           <label class="container">None
-            <input type="checkbox" checked="checked" name="sort" value="">
-
+            <input type="radio" checked="checked" name="sort" value="">
             <span class="checkmark"></span>
           </label>
 
           <label class="container">Price
-            <input type="checkbox" name="sort" value="Price">
-
+            <input type="radio" name="sort" value="Price">
             <span class="checkmark"></span>
           </label>
 
           <label class="container">Popularity
-            <input type="checkbox" name="sort" value="Popularity">
-
+            <input type="radio" name="sort" value="Popularity">
             <span class="checkmark"></span>
           </label>
 
           <label class="container">Time
-            <input type="checkbox" name="sort" value="Time">
-
+            <input type="radio" name="sort" value="Time">
             <span class="checkmark"></span>
           </label>
+        </div>
+        <div class="col-md-3">
+
+          <h3>Sort Direction</h3>
+
+          <label class="container">Ascending
+            <input type="radio" name="sortDir" value="asc">
+            <span class="checkmark"></span>
+          </label>
+
+          <label class="container">Descending
+            <input type="radio" name="sortDir" value="desc">
+            <span class="checkmark"></span>
+          </label>
+
         </div>
       </div>
     </div>
