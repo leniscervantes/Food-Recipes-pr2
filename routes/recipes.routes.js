@@ -15,15 +15,11 @@ router.get('/recipe/:id', (req, res, next) => {
   axiosRecipe
     .getRecipeById(id)
     .then((recipe) => {
-      console.log(recipe)
       commentModel.find({ idRecipe: id })
         .populate("author")
         .then((comments) => {
-          console.log(comments)
           res.render("recipes/recipe", { recipe, comments, id })
         })
-      // tendremos que llamar al modelo CommentModel y buscar los comentarios que tengan la id de la recipe (ordenados por createdAt :D (Bonus))
-      // populate de la propieda author para mostrar el nombre del creador del comentario.
     })
     .catch((err) => next(err));
 });

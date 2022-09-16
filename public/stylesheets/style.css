@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Ubuntu:ital,wght@0,400;1,300&display=swap');
 
 body {
-
   font: 14px "Ubuntu", Helvetica, Arial, sans-serif;
 }
 
@@ -13,12 +12,30 @@ body {
   font-family: 'Indie Flower', cursive;
 }
 
+.indieFont {
+  font-size: 45px;
+  font-family: 'Indie Flower', cursive;
+}
+
+.navbarText {
+  font-size: 20px;
+}
+
+.indexButton {
+  margin-left: 47%;
+}
+
 .textIndex {
   display: flex;
   flex-direction: column;
   margin: auto;
   text-align: center;
   width: 65%;
+}
+
+.num {
+  font-size: 20px;
+  color: rgb(182, 38, 38);
 }
 
 a {
@@ -36,21 +53,33 @@ a {
   margin-top: 60px;
 }
 
+.recipeImg {
+  width: 40%;
+}
+
 .comment {
-  margin-top: 70px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin: auto;
 }
 
-.comment-text {
-  margin-top: 70px;
+.commentInput {
+  width: 600px;
+  margin-top: 30px;
   text-align: center;
   display: flex;
   justify-content: center;
 }
 
+.comment-text {
+  text-align: center;
+  width: 400px;
+  margin-left: 100px;
+}
+
 .text-ingredient {
+  margin-bottom: 45px;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -58,7 +87,8 @@ a {
 }
 
 .recipes-title {
-  margin: 60px;
+  margin-left: 60px;
+  margin-bottom: 20px;
 }
 
 .span-instructions {
@@ -66,18 +96,16 @@ a {
 }
 
 .summary-panel {
-  margin: 60px;
+  width: 70%;
+  margin: auto;
+  margin-bottom: 100px;
+  margin-top: 50px;
   font-size: medium;
 }
 
 .text-step {
   margin: 60px;
   font-size: medium;
-}
-
-.num {
-  font-size: 20px;
-  color: crimson;
 }
 
 .search {
@@ -88,8 +116,9 @@ a {
 
 .ingredient {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 }
+
 
 .container {
   margin-top: 20px;
@@ -116,7 +145,7 @@ img {
 }
 
 .bg {
-  background-color: rgb(245, 240, 228);
+  background-color: rgb(248, 236, 209);
 
 }
 
@@ -213,7 +242,7 @@ label {
   position: relative;
   padding-left: 35px;
   margin-bottom: 12px;
-  cursor: pointer;
+
   font-size: 22px;
   -webkit-user-select: none;
   -moz-user-select: none;

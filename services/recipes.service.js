@@ -26,7 +26,6 @@ class RecipeService {
   getRandomRecipe() {
     return this.axios.get(`/recipes/random?number=6&apiKey=${process.env.APIKEY}`)
       .then(({ data }) => {
-        console.log(data)
         return data
       })
       .catch((err) => console.log(err));

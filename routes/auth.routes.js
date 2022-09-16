@@ -2,11 +2,11 @@ const router = require("express").Router();
 const userModel = require("../models/User.model.js")
 const bcrypt = require('bcryptjs');
 
-router.get("/signup", (req, res, next) => {
+router.get("/signup", (_req, res, _next) => {
   res.render("auth/signup");
 });
 
-router.get("/login", (req, res, next) => {
+router.get("/login", (_req, res, _next) => {
   res.render("auth/login")
 });
 
@@ -15,26 +15,17 @@ router.get('/logout', (req, res) => {
   res.redirect('/');
 });
 
-router.get("/profile", (req, res, next) => {
+router.get("/profile", (req, res, _next) => {
   if (!req.session.user === undefined) {
     userModel.findById(req.session.user._id)
       .then((user) => {
         res.render("auth/profile", user)
       })
   }
-  else res.render("auth/signup")
-
+  else res.redirect("/auth/login")
 })
 
-// router.get("/profile/:id", (req, res, next) => {
-//   const { id } = req.params
-//   userModel.findById(id)
-//     .then((user) => {
-//       res.render("auth/profile", user)
-//     })
-// })
-
-router.get("/edit/:id", (req, res, next) => {
+router.get("/edit/:id", (req, res, _next) => {
   const { id } = req.params
   userModel.findById(id)
     .then((user) => {
@@ -43,7 +34,6 @@ router.get("/edit/:id", (req, res, next) => {
 })
 
 router.get('/delete/:id', (req, res, next) => {
-  console.log(req.params.id)
   userModel.findByIdAndDelete(req.params.id)
     .then(() => res.redirect("/"))
     .catch((err) => next(err));
@@ -77,9 +67,10 @@ router.post("/login", (req, res, next) => {
       return bcrypt.compare(password, user.password)
     })
     .then((isPassword) => {
+      console.log(isPassword)
       if (isPassword) {
         req.session.user = user;
-        res.redirect(`/auth/profile/${req.session.user._id}`);
+        res.render("auth/profile", req.session.user);
       } else {
         res.render('auth/login', { message: 'Usuario o contraseña incorrecta!' });
       }
@@ -90,7 +81,6 @@ router.post("/login", (req, res, next) => {
 
 router.post('/edit/:id', (req, res, next) => {
   const { username, email, password } = req.body;
-  console.log(req.body)
   userModel.findByIdAndUpdate(req.params.id, { username, email, password }, { new: true })
     .then((user) => {
       res.render("auth/profile", user)

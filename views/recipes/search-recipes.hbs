@@ -4,170 +4,173 @@
   <form action="/search-recipes" method="post">
 
     <div class="ingredient">
+      <div>
+        <h3>Ingredient:</h3>
+        <input type="text" name="ingredient">
+      </div>
 
-      <h3>Ingredient</h3>
-      <input type="text" name="ingredient">
-
-      <h3>Max Ready Time</h3>
-      <input type="number" value="180" name="maxReadyTime">
+      <div>
+        <h3>Max Ready Time:</h3>
+        <input type="number" value="180" name="maxReadyTime">
+      </div>
     </div>
 
 
     <div class="container">
-      <div class="row">
-        <div class="col-md-3 ">
-          <h3>Cuisine</h3>
+      <div>
+        <div class="row">
+
+          <div class="col-md-2 ms-4 ">
+            <h3>Cuisine</h3>
+            <label class="container">None
+              <input type="radio" checked="checked" name="cuisine" value="">
+              <span class="checkmark"></span>
+            </label>
+
+            <label class="container">Spanish
+              <input type="radio" name="cuisine" value="Spanish">
+              <span class="checkmark"></span>
+            </label>
+
+            <label class="container">American
+              <input type="radio" name="cuisine" value="American">
+              <span class="checkmark"></span>
+            </label>
+
+            <label class="container">Mexican
+              <input type="radio" name="cuisine" value="Mexican">
+
+              <span class="checkmark"></span>
+            </label>
+
+            <label class="container">Latin American
+              <input type="radio" name="cuisine" value="Latin-american">
+              <span class="checkmark"></span>
+            </label>
+
+            <label class="container">Thai
+              <input type="radio" name="cuisine" value="Thai">
+
+              <span class="checkmark"></span>
+            </label>
+
+            <label class="container">Italian
+              <input type="radio" name="cuisine" value="Italian">
+              <span class="checkmark"></span>
+            </label>
+          </div>
 
 
-          <label class="container">None
-            <input type="radio" checked="checked" name="cuisine" value="">
-            <span class="checkmark"></span>
-          </label>
+          <div class="col-md-2 ms-4 ">
+            <h3>Diet</h3>
 
-          <label class="container">Spanish
-            <input type="radio" name="cuisine" value="Spanish">
-            <span class="checkmark"></span>
-          </label>
+            <label class="container ">None
+              <input type="radio" checked="checked" name="diet" value="">
+              <span class="checkmark"></span>
+            </label>
 
-          <label class="container">American
-            <input type="radio" name="cuisine" value="American">
-            <span class="checkmark"></span>
-          </label>
+            <label class="container">Gluten Free
+              <input type="radio" name="diet" value="GlutenFree">
+              <span class="checkmark"></span>
+            </label>
 
-          <label class="container">Mexican
-            <input type="radio" name="cuisine" value="Mexican">
+            <label class="container">Vegetarian
+              <input type="radio" name="diet" value="Vegetarian">
+              <span class="checkmark"></span>
+            </label>
 
-            <span class="checkmark"></span>
-          </label>
+            <label class="container">Vegan
+              <input type="radio" name="diet" value="Vegan">
 
-          <label class="container">Latin American
-            <input type="radio" name="cuisine" value="Latin-american">
-            <span class="checkmark"></span>
-          </label>
-
-          <label class="container">Thai
-            <input type="radio" name="cuisine" value="Thai">
-
-            <span class="checkmark"></span>
-          </label>
-
-          <label class="container">Italian
-            <input type="radio" name="cuisine" value="Italian">
-            <span class="checkmark"></span>
-          </label>
-        </div>
+              <span class="checkmark"></span>
+            </label>
 
 
-        <div class="col-md-3 ">
-          <h3>Diet</h3>
+          </div>
+          <div class="col-md-2 ms-4">
+            <h3>Intolerances</h3>
 
-          <label class="container ">None
-            <input type="radio" checked="checked" name="diet" value="">
-            <span class="checkmark"></span>
-          </label>
+            <label class="container">None
+              <input type="radio" name="intolerances" value="" checked="checked">
+              <span class="checkmark"></span>
+            </label>
 
-          <label class="container">Gluten Free
-            <input type="radio" name="diet" value="GlutenFree">
-            <span class="checkmark"></span>
-          </label>
+            <label class="container">Egg
+              <input type="checkbox" name="intolerances" value="Egg">
 
-          <label class="container">Vegetarian
-            <input type="radio" name="diet" value="Vegetarian">
-            <span class="checkmark"></span>
-          </label>
+              <span class="checkmark"></span>
+            </label>
 
-          <label class="container">Vegan
-            <input type="radio" name="diet" value="Vegan">
+            <label class="container">Gluten
+              <input type="checkbox" name="intolerances" value="Gluten">
 
-            <span class="checkmark"></span>
-          </label>
+              <span class="checkmark"></span>
+            </label>
 
+            <label class="container">Peanut
+              <input type="checkbox" name="intolerances" value="Peanut">
 
-        </div>
-        <div class="col-md-3">
-          <h3>Intolerances</h3>
+              <span class="checkmark"></span>
+            </label>
 
-          <label class="container">None
-            <input type="radio" name="intolerances" value="" checked="checked">
-            <span class="checkmark"></span>
-          </label>
+            <label class="container">Seafood
+              <input type="checkbox" name="intolerances" value="Seafood">
 
-          <label class="container">Egg
-            <input type="checkbox" name="intolerances" value="Egg">
+              <span class="checkmark"></span>
+            </label>
 
-            <span class="checkmark"></span>
-          </label>
+            <label class="container">Shellfish
+              <input type="checkbox" name="intolerances" value="Shellfish">
+              <span class="checkmark"></span>
+            </label>
 
-          <label class="container">Gluten
-            <input type="checkbox" name="intolerances" value="Gluten">
+            <label class="container">Wheat
+              <input type="checkbox" name="intolerances" value="Wheat">
 
-            <span class="checkmark"></span>
-          </label>
+              <span class="checkmark"></span>
+            </label>
+          </div>
+          <div class="col-md-2 ms-4">
 
-          <label class="container">Peanut
-            <input type="checkbox" name="intolerances" value="Peanut">
+            <h3>Sort</h3>
 
-            <span class="checkmark"></span>
-          </label>
+            <label class="container">None
+              <input type="radio" checked="checked" name="sort" value="">
+              <span class="checkmark"></span>
+            </label>
 
-          <label class="container">Seafood
-            <input type="checkbox" name="intolerances" value="Seafood">
+            <label class="container">Price
+              <input type="radio" name="sort" value="Price">
+              <span class="checkmark"></span>
+            </label>
 
-            <span class="checkmark"></span>
-          </label>
+            <label class="container">Popularity
+              <input type="radio" name="sort" value="Popularity">
+              <span class="checkmark"></span>
+            </label>
 
-          <label class="container">Shellfish
-            <input type="checkbox" name="intolerances" value="Shellfish">
-            <span class="checkmark"></span>
-          </label>
+            <label class="container">Time
+              <input type="radio" name="sort" value="Time">
+              <span class="checkmark"></span>
+            </label>
+          </div>
+          <div class="col-md-2 ms-4">
 
-          <label class="container">Wheat
-            <input type="checkbox" name="intolerances" value="Wheat">
+            <h3>Sort Direction</h3>
 
-            <span class="checkmark"></span>
-          </label>
-        </div>
-        <div class="col-md-3">
+            <label class="container">Ascending
+              <input type="radio" name="sortDir" value="asc">
+              <span class="checkmark"></span>
+            </label>
 
-          <h3>Sort</h3>
+            <label class="container">Descending
+              <input type="radio" name="sortDir" value="desc">
+              <span class="checkmark"></span>
+            </label>
 
-          <label class="container">None
-            <input type="radio" checked="checked" name="sort" value="">
-            <span class="checkmark"></span>
-          </label>
-
-          <label class="container">Price
-            <input type="radio" name="sort" value="Price">
-            <span class="checkmark"></span>
-          </label>
-
-          <label class="container">Popularity
-            <input type="radio" name="sort" value="Popularity">
-            <span class="checkmark"></span>
-          </label>
-
-          <label class="container">Time
-            <input type="radio" name="sort" value="Time">
-            <span class="checkmark"></span>
-          </label>
-        </div>
-        <div class="col-md-3">
-
-          <h3>Sort Direction</h3>
-
-          <label class="container">Ascending
-            <input type="radio" name="sortDir" value="asc">
-            <span class="checkmark"></span>
-          </label>
-
-          <label class="container">Descending
-            <input type="radio" name="sortDir" value="desc">
-            <span class="checkmark"></span>
-          </label>
-
+          </div>
         </div>
       </div>
-    </div>
 
-    <button class="wrapper loader-button btn-active " type="submit">Search</button>
+      <button class="wrapper loader-button btn-active " type="submit">Search</button>
   </form>
