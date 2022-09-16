@@ -14,21 +14,27 @@
 
   <nav class="navbar navbar-expand-lg bg-success text-white">
     <div class="container-fluid">
+
       <a class="navbar-brand text-white letter indieFont" href="/">Spoonable</a>
       <div class="collapse navbar-collapse navbarText">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
             <a class="nav-link active text-white letter" aria-current="page" href="/search-recipes">Recipes</a>
           </li>
+          {{#if id}}
           <li class="nav-item">
             <a class="nav-link text-white letter" href="/auth/profile">Profile</a>
           </li>
+          {{/if}}
         </ul>
-
+        {{#if id}}
+        <a class="nav-link text-white letter" href="/auth/logout">Log Out</a>
+        {{/if}}
+        {{#unless id}}
         <a class="nav-link auth" href="/auth/signup">Sign Up</a>
         <a class="nav-link auth" href="/auth/login">Log In</a>
+        {{/unless}}
         {{!-- {{#if userConnected}} --}}
-        <a class="nav-link auth" href="/auth/logout">Log Out</a>
         {{!-- {{/if}} --}}
       </div>
     </div>

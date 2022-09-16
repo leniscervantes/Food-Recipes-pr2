@@ -14,8 +14,8 @@
 </form> --}}
 
 
-  <h2 class="title">Create your account!</h2>
-  
+<h2 class="title">Create your account!</h2>
+
 <div class="pro">
 
   <form action="/auth/signup" method="post">
@@ -23,6 +23,7 @@
       <label class="form-label">Username</label>
       <input type="text" name="username" class="form-control">
       <div class="form-text">Your username will be the name everyone will see, so be creative!</div>
+      {{message}}
     </div>
     <div class="mb-3">
       <label class="form-label">Email address</label>

@@ -72,10 +72,8 @@ a {
   justify-content: center;
 }
 
-.comment-text {
-  text-align: center;
-  width: 400px;
-  margin-left: 100px;
+.conditionalmsg {
+  margin-left: 60px;
 }
 
 .text-ingredient {
@@ -148,6 +146,7 @@ img {
   background-color: rgb(248, 236, 209);
 
 }
+
 
 .card-text {
   font-size: 17px;

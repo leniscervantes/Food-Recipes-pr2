@@ -1,9 +1,9 @@
 module.exports = (app) => {
-  app.use((req, res, next) => {
+  app.use((_req, res, _next) => {
     res.status(404).render("not-found");
   });
 
-  app.use((err, req, res, next) => {
+  app.use((err, req, res, _next) => {
     console.error("ERROR", req.method, req.path, err);
 
     if (!res.headersSent) {

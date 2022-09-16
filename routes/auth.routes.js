@@ -43,19 +43,29 @@ router.get('/delete/:id', (req, res, next) => {
 //POST
 
 router.post('/signup', (req, res, next) => {
+
   const { username, password, email } = req.body;
-  bcrypt
-    .genSalt(10)
-    .then((salts) => {
-      return bcrypt.hash(password, salts);
+  userModel.find({ username })
+    .then((user) => {
+      if (!user) {
+        bcrypt
+          .genSalt(10)
+          .then((salts) => {
+            return bcrypt.hash(password, salts);
+          })
+          .then((pass) => {
+            return userModel.create({ password: pass, username, email });
+          })
+          .then(() => {
+            res.redirect('/auth/login');
+          })
+          .catch((err) => next(err));
+      }
+      else {
+        res.render('auth/signup', { message: 'Username already in use' });
+      }
     })
-    .then((pass) => {
-      return userModel.create({ password: pass, username, email });
-    })
-    .then(() => {
-      res.redirect('/auth/login');
-    })
-    .catch((err) => next(err));
+
 });
 
 router.post("/login", (req, res, next) => {

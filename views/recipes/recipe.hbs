@@ -5,12 +5,12 @@
 </div>
 
 
-<h3 class="recipes-title">Summary:</h3>
+<h3 class="recipes-title">-Summary:</h3>
 <div class="summary-panel">
   <p>{{{recipe.summary}}}</p>
 </div>
 
-<h3 class="recipes-title">Ingredients:</h3>
+<h3 class="recipes-title">-Ingredients:</h3>
 <div class="text-ingredient">
   <div class="container">
     <div class="row">
@@ -34,7 +34,7 @@
   </div>
 </div>
 
-<h3 class="recipes-title">This are the instructions :)</h3>
+<h3 class="recipes-title">-This are the instructions :)</h3>
 <div class="text-step">
 
   {{#each recipe.analyzedInstructions.[0].steps}}
@@ -44,8 +44,8 @@
 </div>
 
 
-<h4 class="recipes-title">Leave a comment!</h4>
-
+{{#if user}}
+<h4 class="recipes-title">-Leave a comment!</h4>
 <form action="/recipe/{{id}}" method="post">
   <div class="comment commentInput">
     <div class="mb-3">
@@ -53,22 +53,25 @@
       <input type="text" class="form-control">
     </div>
     <div class="mb-3 ">
-      <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+      <label for="exampleFormControlTextarea1" class="form-label">Leave your comment here!</label>
       <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
     </div>
     <button type="submit" class="btn btn-success">Submit</button>
-
+    {{message}}
   </div>
 </form>
+{{/if}}
 
 
-<h4 class="recipes-title">Other users comments:</h4>
+<h4 class="recipes-title">-Users comments:</h4>
+{{#unless user}}<h6 class="conditionalmsg">You can log in if you want to leave a comment :)</h6>{{/unless}}
+
 {{#each comments}}
 
-<div class="comment-text">
+<div class="comment-text ms-5">
   <div class="card" style="width: 18rem; height: 150px">
     <div class="card-body">
-      <h5 class="card-title">{{title}}</h5>
+      <h5 class="card-title text-center">{{title}}</h5>
       <h6 class="card-subtitle mb-2 text-muted">By:{{author.username}}</h6>
       <p class="card-text">{{body}}</p>
     </div>

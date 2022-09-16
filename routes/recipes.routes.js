@@ -9,16 +9,16 @@ router.get('/search-recipes', (req, res) => {
 })
 
 router.get('/recipe/:id', (req, res, next) => {
-
+  let user = false
   const { id } = req.params
-
+  if (req.session.user) { user = true }
   axiosRecipe
     .getRecipeById(id)
     .then((recipe) => {
       commentModel.find({ idRecipe: id })
         .populate("author")
         .then((comments) => {
-          res.render("recipes/recipe", { recipe, comments, id })
+          res.render("recipes/recipe", { recipe, comments, id, user })
         })
     })
     .catch((err) => next(err));

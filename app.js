@@ -16,6 +16,17 @@ const projectName = "Spoonable!";
 
 app.locals.appTitle = `${capitalized(projectName)}`;
 
+app.use((req, _res, next) => {
+    if (req.session.user) {
+        app.locals.id = req.session.user._id;
+
+    } else {
+        app.locals.id = null;
+
+    }
+    next();
+})
+
 const index = require("./routes/index.routes");
 app.use("/", index);
 
